@@ -4,12 +4,12 @@ import (
 	"context"
 	"strings"
 
-	"github.com/gruntwork-io/go-commons/errors"
+	"github.com/gads-citron/go-commons/errors"
 	corev1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/client-go/kubernetes"
 
-	"github.com/gruntwork-io/kubergrunt/logging"
+	"github.com/gads-citron/kubergrunt/logging"
 )
 
 const (
@@ -132,13 +132,13 @@ func getAWSLoadBalancerNameFromHostname(hostname string) (string, error) {
 
 // GetLoadBalancerTypeFromService will return the ELB type and target type of the given LoadBalancer Service. This uses
 // the following heuristic:
-// - A LoadBalancer Service with no type annotations will default to Classic Load Balancer (from the in-tree
-//   controller).
-// - If service.beta.kubernetes.io/aws-load-balancer-type is set to nlb or external, then the ELB will be NLB. (When
-//   external, we assume the LB controller handles it)
-// - For LB services handled by the LB controller, also check for
-//   service.beta.kubernetes.io/aws-load-balancer-nlb-target-type which determines the target type. Otherwise, it is
-//   always instance target type.
+//   - A LoadBalancer Service with no type annotations will default to Classic Load Balancer (from the in-tree
+//     controller).
+//   - If service.beta.kubernetes.io/aws-load-balancer-type is set to nlb or external, then the ELB will be NLB. (When
+//     external, we assume the LB controller handles it)
+//   - For LB services handled by the LB controller, also check for
+//     service.beta.kubernetes.io/aws-load-balancer-nlb-target-type which determines the target type. Otherwise, it is
+//     always instance target type.
 func GetLoadBalancerTypeFromService(service corev1.Service) (ELBType, ELBTargetType, error) {
 	annotations := service.ObjectMeta.Annotations
 	lbTypeString, hasLBTypeAnnotation := annotations[lbTypeAnnotationKey]

@@ -3,7 +3,7 @@ package kubectl
 import (
 	"testing"
 
-	"github.com/gruntwork-io/terratest/modules/k8s"
+	"github.com/gads-citron/terratest/modules/k8s"
 	"github.com/stretchr/testify/require"
 )
 

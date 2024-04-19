@@ -4,7 +4,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/gruntwork-io/terratest/modules/k8s"
+	"github.com/gads-citron/terratest/modules/k8s"
 	"github.com/stretchr/testify/require"
 	corev1 "k8s.io/api/core/v1"
 )

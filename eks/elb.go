@@ -8,13 +8,13 @@ import (
 	"github.com/aws/aws-sdk-go/aws"
 	"github.com/aws/aws-sdk-go/service/elb"
 	"github.com/aws/aws-sdk-go/service/elbv2"
-	"github.com/gruntwork-io/go-commons/collections"
-	"github.com/gruntwork-io/go-commons/errors"
-	"github.com/gruntwork-io/go-commons/retry"
+	"github.com/gads-citron/go-commons/collections"
+	"github.com/gads-citron/go-commons/errors"
+	"github.com/gads-citron/go-commons/retry"
 	"github.com/hashicorp/go-multierror"
 	"github.com/sirupsen/logrus"
 
-	"github.com/gruntwork-io/kubergrunt/commonerrors"
+	"github.com/gads-citron/kubergrunt/commonerrors"
 )
 
 // waitForAnyInstancesRegisteredToALBOrNLB implements the logic to wait for instance registration to Application and

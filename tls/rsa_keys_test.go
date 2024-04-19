@@ -9,10 +9,10 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/gruntwork-io/go-commons/errors"
-	"github.com/gruntwork-io/terratest/modules/logger"
-	"github.com/gruntwork-io/terratest/modules/random"
-	"github.com/gruntwork-io/terratest/modules/shell"
+	"github.com/gads-citron/go-commons/errors"
+	"github.com/gads-citron/terratest/modules/logger"
+	"github.com/gads-citron/terratest/modules/random"
+	"github.com/gads-citron/terratest/modules/shell"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )

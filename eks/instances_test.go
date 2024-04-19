@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/gruntwork-io/terratest/modules/aws"
-	"github.com/gruntwork-io/terratest/modules/random"
+	"github.com/gads-citron/terratest/modules/aws"
+	"github.com/gads-citron/terratest/modules/random"
 	"github.com/stretchr/testify/require"
 )
 

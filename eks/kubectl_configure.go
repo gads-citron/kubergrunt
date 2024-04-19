@@ -2,11 +2,11 @@ package eks
 
 import (
 	"github.com/aws/aws-sdk-go/service/eks"
-	"github.com/gruntwork-io/go-commons/files"
+	"github.com/gads-citron/go-commons/files"
 	"k8s.io/client-go/tools/clientcmd"
 
-	"github.com/gruntwork-io/kubergrunt/kubectl"
-	"github.com/gruntwork-io/kubergrunt/logging"
+	"github.com/gads-citron/kubergrunt/kubectl"
+	"github.com/gads-citron/kubergrunt/logging"
 )
 
 // ConfigureKubectlForEks adds a new context to the kubeconfig located at the given path that can authenticate with the

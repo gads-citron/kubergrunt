@@ -3,10 +3,10 @@ package eksawshelper
 import (
 	"github.com/aws/aws-sdk-go/aws"
 	"github.com/aws/aws-sdk-go/service/eks"
-	"github.com/gruntwork-io/go-commons/errors"
+	"github.com/gads-citron/go-commons/errors"
 	"sigs.k8s.io/aws-iam-authenticator/pkg/token"
 
-	"github.com/gruntwork-io/kubergrunt/logging"
+	"github.com/gads-citron/kubergrunt/logging"
 )
 
 // GetClusterByArn returns the EKS Cluster object that corresponds to the given ARN.

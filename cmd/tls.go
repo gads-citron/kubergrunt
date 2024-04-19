@@ -5,10 +5,10 @@ import (
 	"strings"
 	"time"
 
-	"github.com/gruntwork-io/go-commons/entrypoint"
+	"github.com/gads-citron/go-commons/entrypoint"
 	"github.com/urfave/cli"
 
-	"github.com/gruntwork-io/kubergrunt/tls"
+	"github.com/gads-citron/kubergrunt/tls"
 )
 
 var (

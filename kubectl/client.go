@@ -7,15 +7,15 @@ import (
 	// See: https://github.com/kubernetes/client-go/issues/242
 	_ "k8s.io/client-go/plugin/pkg/client/auth/gcp"
 
-	"github.com/gruntwork-io/kubergrunt/logging"
+	"github.com/gads-citron/kubergrunt/logging"
 )
 
 // GetKubernetesClientFromOptions returns a Kubernetes API client given a KubectlOptions object. Constructs the client
 // based on the information in the struct:
-// - If Server is set, assume direct auth methods and use Server, Base64PEMCertificateAuthority, and BearerToken to
-//   construct authenticated client.
-// - Else, use ConfigPath and ContextName to load the config from disk and setup the client to use the auth method
-//   provided in the context.
+//   - If Server is set, assume direct auth methods and use Server, Base64PEMCertificateAuthority, and BearerToken to
+//     construct authenticated client.
+//   - Else, use ConfigPath and ContextName to load the config from disk and setup the client to use the auth method
+//     provided in the context.
 func GetKubernetesClientFromOptions(kubectlOptions *KubectlOptions) (*kubernetes.Clientset, error) {
 	logger := logging.GetProjectLogger()
 	logger.Infof("Loading Kubernetes Client")

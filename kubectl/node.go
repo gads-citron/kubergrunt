@@ -5,14 +5,14 @@ import (
 	"sync"
 	"time"
 
-	"github.com/gruntwork-io/go-commons/collections"
-	"github.com/gruntwork-io/go-commons/errors"
+	"github.com/gads-citron/go-commons/collections"
+	"github.com/gads-citron/go-commons/errors"
 	"github.com/hashicorp/go-multierror"
 	corev1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/client-go/kubernetes"
 
-	"github.com/gruntwork-io/kubergrunt/logging"
+	"github.com/gads-citron/kubergrunt/logging"
 )
 
 // WaitForNodesReady will continuously watch the nodes until they reach the ready state.

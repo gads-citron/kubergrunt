@@ -7,13 +7,13 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/gruntwork-io/terratest/modules/k8s"
-	"github.com/gruntwork-io/terratest/modules/random"
-	"github.com/gruntwork-io/terratest/modules/shell"
+	"github.com/gads-citron/terratest/modules/k8s"
+	"github.com/gads-citron/terratest/modules/random"
+	"github.com/gads-citron/terratest/modules/shell"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"github.com/gruntwork-io/kubergrunt/kubectl"
+	"github.com/gads-citron/kubergrunt/kubectl"
 )
 
 // This test will generate a CA certificate key pair, and then use the generated CA certificate key pair to issue a

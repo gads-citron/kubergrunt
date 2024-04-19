@@ -9,11 +9,11 @@ import (
 
 	"github.com/aws/aws-sdk-go/aws"
 	"github.com/aws/aws-sdk-go/service/eks"
-	"github.com/gruntwork-io/terratest/modules/k8s"
-	"github.com/gruntwork-io/terratest/modules/random"
+	"github.com/gads-citron/terratest/modules/k8s"
+	"github.com/gads-citron/terratest/modules/random"
 	"github.com/stretchr/testify/require"
 
-	"github.com/gruntwork-io/kubergrunt/kubectl"
+	"github.com/gads-citron/kubergrunt/kubectl"
 )
 
 func TestEksKubectlConfigureHonorsKubeConfigPath(t *testing.T) {

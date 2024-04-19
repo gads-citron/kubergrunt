@@ -4,11 +4,11 @@ import (
 	"context"
 	"time"
 
-	"github.com/gruntwork-io/go-commons/errors"
+	"github.com/gads-citron/go-commons/errors"
 	networkingv1 "k8s.io/api/networking/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 
-	"github.com/gruntwork-io/kubergrunt/logging"
+	"github.com/gads-citron/kubergrunt/logging"
 )
 
 // GetIngress returns a Kubernetes Ingress resource in the provided namespace with the given name.

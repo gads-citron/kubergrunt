@@ -10,9 +10,9 @@ import (
 	"net/url"
 	"path"
 
-	"github.com/gruntwork-io/go-commons/errors"
+	"github.com/gads-citron/go-commons/errors"
 
-	"github.com/gruntwork-io/kubergrunt/logging"
+	"github.com/gads-citron/kubergrunt/logging"
 )
 
 type Thumbprint struct {

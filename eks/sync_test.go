@@ -9,9 +9,9 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/gruntwork-io/kubergrunt/eksawshelper"
-	"github.com/gruntwork-io/terratest/modules/k8s"
-	"github.com/gruntwork-io/terratest/modules/random"
+	"github.com/gads-citron/kubergrunt/eksawshelper"
+	"github.com/gads-citron/terratest/modules/k8s"
+	"github.com/gads-citron/terratest/modules/random"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 	corev1 "k8s.io/api/core/v1"

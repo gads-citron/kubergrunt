@@ -11,9 +11,9 @@ import (
 	"net"
 	"time"
 
-	"github.com/gruntwork-io/go-commons/errors"
+	"github.com/gads-citron/go-commons/errors"
 
-	"github.com/gruntwork-io/kubergrunt/kubectl"
+	"github.com/gads-citron/kubergrunt/kubectl"
 )
 
 // CertificateKeyPairPath represents the path where the certificate key pair resides.

@@ -8,23 +8,24 @@ import (
 	"github.com/aws/aws-sdk-go/service/ec2"
 	"github.com/aws/aws-sdk-go/service/elb"
 	"github.com/aws/aws-sdk-go/service/elbv2"
-	"github.com/gruntwork-io/go-commons/errors"
+	"github.com/gads-citron/go-commons/errors"
 
-	"github.com/gruntwork-io/kubergrunt/eksawshelper"
-	"github.com/gruntwork-io/kubergrunt/kubectl"
-	"github.com/gruntwork-io/kubergrunt/logging"
+	"github.com/gads-citron/kubergrunt/eksawshelper"
+	"github.com/gads-citron/kubergrunt/kubectl"
+	"github.com/gads-citron/kubergrunt/logging"
 )
 
 // RollOutDeployment will perform a zero downtime roll out of the current launch configuration associated with the
 // provided ASG in the provided EKS cluster. This is accomplished by:
-// 1. Double the desired capacity of the Auto Scaling Group that powers the EKS Cluster. This will launch new EKS
-//    workers with the new launch configuration.
-// 2. Wait for the new nodes to be ready for Pod scheduling in Kubernetes.
-// 3. Cordon the old nodes so that no new Pods will be scheduled there.
-// 4. Drain the pods scheduled on the old EKS workers (using the equivalent of "kubectl drain"), so that they will be
-//    rescheduled on the new EKS workers.
-// 5. Wait for all the pods to migrate off of the old EKS workers.
-// 6. Set the desired capacity down to the original value and remove the old EKS workers from the ASG.
+//  1. Double the desired capacity of the Auto Scaling Group that powers the EKS Cluster. This will launch new EKS
+//     workers with the new launch configuration.
+//  2. Wait for the new nodes to be ready for Pod scheduling in Kubernetes.
+//  3. Cordon the old nodes so that no new Pods will be scheduled there.
+//  4. Drain the pods scheduled on the old EKS workers (using the equivalent of "kubectl drain"), so that they will be
+//     rescheduled on the new EKS workers.
+//  5. Wait for all the pods to migrate off of the old EKS workers.
+//  6. Set the desired capacity down to the original value and remove the old EKS workers from the ASG.
+//
 // The process is broken up into stages/checkpoints, state is stored along the way so that command can pick up
 // from a stage if something bad happens.
 func RollOutDeployment(

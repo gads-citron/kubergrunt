@@ -6,8 +6,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/gruntwork-io/terratest/modules/k8s"
-	"github.com/gruntwork-io/terratest/modules/random"
+	"github.com/gads-citron/terratest/modules/k8s"
+	"github.com/gads-citron/terratest/modules/random"
 	"github.com/stretchr/testify/require"
 )
 

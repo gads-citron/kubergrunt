@@ -5,10 +5,10 @@ import (
 
 	"github.com/aws/aws-sdk-go/aws"
 	"github.com/aws/aws-sdk-go/service/ec2"
-	"github.com/gruntwork-io/go-commons/collections"
-	"github.com/gruntwork-io/go-commons/errors"
+	"github.com/gads-citron/go-commons/collections"
+	"github.com/gads-citron/go-commons/errors"
 
-	"github.com/gruntwork-io/kubergrunt/logging"
+	"github.com/gads-citron/kubergrunt/logging"
 )
 
 // Given a list of instance IDs, fetch the instance details from AWS.

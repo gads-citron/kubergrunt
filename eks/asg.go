@@ -8,13 +8,13 @@ import (
 	"github.com/aws/aws-sdk-go/service/ec2"
 	"github.com/aws/aws-sdk-go/service/elb"
 	"github.com/aws/aws-sdk-go/service/elbv2"
-	"github.com/gruntwork-io/go-commons/collections"
-	"github.com/gruntwork-io/go-commons/errors"
+	"github.com/gads-citron/go-commons/collections"
+	"github.com/gads-citron/go-commons/errors"
 	"github.com/hashicorp/go-multierror"
 
-	"github.com/gruntwork-io/kubergrunt/commonerrors"
-	"github.com/gruntwork-io/kubergrunt/kubectl"
-	"github.com/gruntwork-io/kubergrunt/logging"
+	"github.com/gads-citron/kubergrunt/commonerrors"
+	"github.com/gads-citron/kubergrunt/kubectl"
+	"github.com/gads-citron/kubergrunt/logging"
 )
 
 // GetAsgByName will lookup an AutoScalingGroup that matches the given name. This will return an error if it can not
@@ -287,8 +287,9 @@ func detachInstances(asgSvc *autoscaling.AutoScaling, asgName string, idList []s
 // - Scales better when there are many service load balancers.
 // - Not a strict Pro but: more instances will continue to register, improving service up time as we go.
 // Cons:
-// - Not all instances are registered, so there is no "load balancing" initially. This may bring down the new server
-//   that is launched.
+//   - Not all instances are registered, so there is no "load balancing" initially. This may bring down the new server
+//     that is launched.
+//
 // Ultimately, it was decided that the cons are not worth the extended wait time it will introduce to the command.
 func waitForAnyInstancesRegisteredToELB(elbSvc *elb.ELB, elbv2Svc *elbv2.ELBV2, elbs []kubectl.AWSLoadBalancer, instanceIds []string) error {
 	logger := logging.GetProjectLogger()
