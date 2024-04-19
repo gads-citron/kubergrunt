@@ -2,7 +2,7 @@ env: &env
   environment:
     GRUNTWORK_INSTALLER_VERSION: v0.0.38
     TERRATEST_LOG_PARSER_VERSION: v0.40.6
-    MODULE_CI_VERSION: v0.51.0
+    MODULE_CI_VERSION: v1.0.0
     TERRAFORM_VERSION: 1.2.7
     TERRAGRUNT_VERSION: NONE
     PACKER_VERSION: NONE
@@ -21,8 +21,8 @@ install_gruntwork_utils: &install_gruntwork_utils
   name: install gruntwork utils
   command: |
     curl -Ls https://raw.githubusercontent.com/gruntwork-io/gruntwork-installer/main/bootstrap-gruntwork-installer.sh | bash /dev/stdin --version "${GRUNTWORK_INSTALLER_VERSION}"
-    gruntwork-install --module-name "gruntwork-module-circleci-helpers" --repo "https://github.com/gruntwork-io/terraform-aws-ci" --tag "${MODULE_CI_VERSION}"
-    gruntwork-install --module-name "kubernetes-circleci-helpers" --repo "https://github.com/gruntwork-io/terraform-aws-ci" --tag "${MODULE_CI_VERSION}"
+    gruntwork-install --module-name "gruntwork-module-circleci-helpers" --repo "https://github.com/gads-citron/terraform-aws-ci" --tag "${MODULE_CI_VERSION}"
+    gruntwork-install --module-name "kubernetes-circleci-helpers" --repo "https://github.com/gads-citron/terraform-aws-ci" --tag "${MODULE_CI_VERSION}"
     gruntwork-install --binary-name "terratest_log_parser" --repo "https://github.com/gruntwork-io/terratest" --tag "${TERRATEST_LOG_PARSER_VERSION}"
     configure-environment-for-gruntwork-module \
       --tfenv-version NONE \
@@ -86,8 +86,8 @@ jobs:
           name: Install sign-binary-helpers
           command: |
             curl -Ls https://raw.githubusercontent.com/gruntwork-io/gruntwork-installer/master/bootstrap-gruntwork-installer.sh | bash /dev/stdin --version "${GRUNTWORK_INSTALLER_VERSION}"
-            gruntwork-install --module-name "gruntwork-module-circleci-helpers" --repo "https://github.com/gruntwork-io/terraform-aws-ci" --tag "${MODULE_CI_VERSION}"
-            gruntwork-install --module-name "sign-binary-helpers" --repo "https://github.com/gruntwork-io/terraform-aws-ci" --tag "${MODULE_CI_VERSION}"
+            gruntwork-install --module-name "gruntwork-module-circleci-helpers" --repo "https://github.com/gads-citron/terraform-aws-ci" --tag "${MODULE_CI_VERSION}"
+            gruntwork-install --module-name "sign-binary-helpers" --repo "https://github.com/gads-citron/terraform-aws-ci" --tag "${MODULE_CI_VERSION}"
       - run:
           name: Compile and sign the binaries
           command: |
